@@ -3,12 +3,13 @@
  * Purpose: This is a class that uses the fffffffffffffffffffffffffffffffffffffffffffffffff
  */
 public class Quadrilateral {
- private Point a, Point b, Point c, Point d;
+ private Point p;
  public Quadrilateral (Point a, Point b, Point c, Point d){
-   this.a = a;
-   this.b = b;
-   this.c = c;
-   this.d = d;
+   p = new Point[4];
+  p[1] = a;
+  p[2] = b;
+  p[3] = c;
+  p[4] = d;
  }
  public boolean isTrapezoid() {
   return a.slope(b) == c.slope(d) ? true : false; 
