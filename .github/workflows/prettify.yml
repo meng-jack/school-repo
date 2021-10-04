@@ -2,7 +2,7 @@ name: Prettier for Code
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   cleanup_tasks:
