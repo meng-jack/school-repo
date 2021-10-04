@@ -8,7 +8,7 @@ public class Quadrilateral {
  }
   
  public static boolean approx (double a, double b) {
-  return  
+  return (a - b) < 0.000001 ? true : false;
  }
   
 }
