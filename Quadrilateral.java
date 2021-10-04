@@ -1,3 +1,7 @@
+/**
+ * @author Jack Meng
+ * Purpose: This is a class that uses the fffffffffffffffffffffffffffffffffffffffffffffffff
+ */
 public class Quadrilateral {
  private Point a, Point b, Point c, Point d;
  public Quadrilateral (Point a, Point b, Point c, Point d){
