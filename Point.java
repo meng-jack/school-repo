@@ -36,4 +36,8 @@ public class Point {
   public static boolean approx(double a, double b) {
     return (a - b) < 0.000001 ? true : false;
   }
+  public String toString() {
+    return "(" + x + "," + ")";
+
+  }
 }
