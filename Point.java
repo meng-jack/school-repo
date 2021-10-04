@@ -8,11 +8,11 @@ public class Point {
   }
 
   public double getX() {
-    return x == null ? 0.0d : this.x;
+    return x == null ? this.x : 0.0d;
   }
 
   public double getY() {
-    return y == null ? 0.0d : this.x;
+    return y == null ? this.x : 0.0d;
   }
 
   public double distance(Point p) {
