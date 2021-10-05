@@ -30,7 +30,7 @@ public class Point {
   }
 
   public boolean equals(Point p) {
-    return approx(p.getX(), this.x) ? true : false;
+    return approx(p.getX(), this.x) && approx(p.getY(), this.y) ? true : false;
   }
 
   public static boolean approx(double a, double b) {
