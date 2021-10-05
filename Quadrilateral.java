@@ -4,7 +4,7 @@
  */
 public class Quadrilateral {
 
-  private Point p;
+  private Point[] p;
 
   public Quadrilateral(Point a, Point b, Point c, Point d) {
     p = new Point[4];
