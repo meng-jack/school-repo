@@ -54,12 +54,11 @@ public class MiniPaintPanel extends JPanel implements MouseListener, ActionListe
   private JButton[] buttons = new JButton[8];
   private JLabel[] labels = new JLabel[2];
   private Color currColor = Color.BLACK;
-  private Line[] lines = new Line[500];
   private int startx, starty, endx, endy;
   private boolean line = true; // true == line ;; false == rectangle
   private Dynanmic entities = new Dynanmic(500);
   private Graphics g;
-  private Dimension windowSize;
+  private Dimension windowSize, boardSize;
 
   MiniPaintPanel() {
     windowSize = new Dimension(800, 500);
@@ -75,23 +74,23 @@ public class MiniPaintPanel extends JPanel implements MouseListener, ActionListe
     labels[1].setOpaque(true);
     labels[1].setAlignmentX(Component.LEFT_ALIGNMENT);
 
-    buttons[0] = new JButton("                              ");
+    buttons[0] = new JButton("     ");
     buttons[0].setBackground(Color.GREEN);
 
-    buttons[1] = new JButton("                              ");
+    buttons[1] = new JButton("     ");
     buttons[1].setBackground(Color.BLUE);
 
-    buttons[2] = new JButton("                              ");
+    buttons[2] = new JButton("     ");
     buttons[2].setBackground(Color.RED);
 
-    buttons[3] = new JButton("                              ");
+    buttons[3] = new JButton("     ");
     buttons[3].setBackground(Color.BLACK);
 
-    buttons[4] = new JButton("                              ");
+    buttons[4] = new JButton("     ");
     buttons[4].setBackground(
         new Color((int) (Math.random() * 256), (int) (Math.random() * 256), (int) (Math.random() * 256)));
 
-    buttons[5] = new JButton("                              ");
+    buttons[5] = new JButton("     ");
     buttons[5].setBackground(Color.ORANGE);
 
     buttons[6] = new JButton("Change Shape");
@@ -103,7 +102,7 @@ public class MiniPaintPanel extends JPanel implements MouseListener, ActionListe
     menu1 = new JPanel();
     menu1.setLayout(new BoxLayout(menu1, BoxLayout.Y_AXIS));
     menu1.setBackground(Color.GRAY);
-    menu1.setPreferredSize(new Dimension((int) windowSize.getWidth() / 4,
+    menu1.setPreferredSize(new Dimension((int) windowSize.getWidth(),
         (int) windowSize.getHeight() / 3 + (int) windowSize.getHeight() / 4));
 
     menu1.add(labels[0]);
@@ -113,7 +112,6 @@ public class MiniPaintPanel extends JPanel implements MouseListener, ActionListe
     for (JButton jb : buttons) {
       jb.setForeground(Color.WHITE);
       jb.addActionListener(this);
-      jb.setPreferredSize(new Dimension(100, 50));
       jb.setAlignmentX(Component.LEFT_ALIGNMENT);
       jb.setAlignmentY(Component.TOP_ALIGNMENT);
       menu1.add(jb);
@@ -125,8 +123,9 @@ public class MiniPaintPanel extends JPanel implements MouseListener, ActionListe
     board.setPreferredSize(new Dimension((int) windowSize.getWidth(), (int) windowSize.getHeight()));
 
     setLayout(new BorderLayout());
-    add(board, BorderLayout.SOUTH);
-    add(menu1, BorderLayout.NORTH);
+    
+    add(board, BorderLayout.NORTH);
+    add(menu1, BorderLayout.SOUTH);
 
   }
 
